@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaani | Authentic Indian Restaurant in Bratislava</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+        body { font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
+        .font-playfair { font-family: 'Playfair Display', serif; }
+        .bg-sea-green { background-color: #3a7d7d; }
+        .text-sea-green { color: #3a7d7d; }
+        .border-sea-green { border-color: #3a7d7d; }
+        .bg-gold { background-color: #d4af37; }
+        .text-gold { color: #d4af37; }
+        .hero-pattern {
+            background-image: url('https://huggingface.co/spaces/Da5hxo/avaani/resolve/main/images/MOF_0222.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .nav-link:hover { color: #d4af37; }
+    </style>
+</head>
+
+<body class="bg-white text-gray-800">
+
+<!-- Navigation -->
+<nav class="fixed w-full bg-white shadow-md z-50">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="#home" class="text-2xl font-bold text-sea-green font-playfair">AVAANI</a>
+        <div class="hidden md:flex space-x-8">
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#menu" class="nav-link">Menu</a>
+            <a href="#gallery" class="nav-link">Gallery</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </div>
+        <a href="#menu" class="hidden md:block bg-sea-green text-white px-6 py-2 rounded-full hover:bg-opacity-90 transition">View Menu</a>
+        <button class="md:hidden focus:outline-none">
+            <i data-feather="menu"></i>
+        </button>
+    </div>
+</nav>
+
+<!-- Hero -->
+<section id="home" class="hero-pattern min-h-screen flex items-center pt-20">
+    <div class="container mx-auto px-6 py-20">
+        <div class="max-w-2xl" data-aos="fade-right">
+            <h1 class="text-4xl md:text-6xl font-bold text-white font-playfair mb-6">Authentic Indian Cuisine</h1>
+            <p class="text-xl text-white mb-8">Experience the rich flavors of India in the heart of Bratislava</p>
+            <div class="flex space-x-4">
+                <a href="#menu" class="bg-gold text-white px-8 py-3 rounded-full hover:bg-opacity-90 transition">View Menu</a>
+                <a href="#gallery" class="border-2 border-white text-white px-8 py-3 rounded-full hover:bg-white hover:bg-opacity-10 transition">Gallery</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About -->
+<section id="about" class="py-20 bg-white">
+    <!-- (unchanged) -->
+</section>
+
+<!-- Menu -->
+<section id="menu" class="py-20 bg-gray-50">
+    <!-- (unchanged) -->
+</section>
+
+<!-- Gallery -->
+<section id="gallery" class="py-20 bg-white">
+    <!-- (unchanged) -->
+</section>
+
+<!-- Contact -->
+<section id="contact" class="py-20 bg-white">
+    <!-- (unchanged) -->
+</section>
+
+<!-- Footer -->
+<footer class="bg-gray-900 text-white py-12">
+    <!-- (unchanged) -->
+</footer>
+
+<script>
+    AOS.init({ duration: 800, once: true });
+    feather.replace();
+
+    document.querySelector('nav button').addEventListener('click', function () {
+        const mobileMenu = document.querySelector('.hidden.md\\:flex');
+        mobileMenu.classList.toggle('hidden');
+        mobileMenu.classList.toggle('flex');
+        mobileMenu.classList.toggle('flex-col');
+        mobileMenu.classList.toggle('absolute');
+        mobileMenu.classList.toggle('top-16');
+        mobileMenu.classList.toggle('left-0');
+        mobileMenu.classList.toggle('w-full');
+        mobileMenu.classList.toggle('bg-white');
+        mobileMenu.classList.toggle('p-4');
+        mobileMenu.classList.toggle('shadow-md');
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+</script>
+
+</body>
+</html>
